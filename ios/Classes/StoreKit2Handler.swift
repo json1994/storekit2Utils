@@ -171,7 +171,7 @@ class StoreKit2Handler {
                     "productId": transaction.productID,
                     "appBundleID": transaction.appBundleID,
                     "originalID": transaction.originalID,
-                    "appAccountToken": transaction.appAccountToken?.uuidString ?? ""
+                    "appAccountToken": transaction.appAccountToken?.uuidString ?? "",
                     "purchaseDate": Int(transaction.purchaseDate.timeIntervalSince1970),
                     "json": String(data: transaction.jsonRepresentation, encoding: .utf8) ?? "",
                     "isSubscription": transaction.productType == .autoRenewable || transaction.productType == .nonRenewable

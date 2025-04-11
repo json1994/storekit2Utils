@@ -22,7 +22,7 @@ sed -i '' "s/version: $current_version/version: $new_version/" $FILE_PATH
 
 flutter pub get
 
-dart pub publish -f
+flutter packages pub publish --server=https://pub.dartlang.org
 
 git add .
 git commit -m "update to $new_version"
