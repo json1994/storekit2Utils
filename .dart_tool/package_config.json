@@ -164,13 +164,13 @@
       "languageVersion": "3.3"
     },
     {
-      "name": "storekit2Utils",
+      "name": "storekit2utils",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2025-04-11T06:54:46.386806Z",
+  "generated": "2025-04-11T06:58:44.070598Z",
   "generator": "pub",
   "generatorVersion": "3.6.2",
   "flutterRoot": "file:///Users/json/Documents/dev_env/flutter/versions/3.27.4",

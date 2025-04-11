@@ -207,13 +207,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.12.0"
-  storekit2Utils:
+  storekit2utils:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.1"
   stream_channel:
     dependency: transitive
     description:

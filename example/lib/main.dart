@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:storekit2Utils/storekit2helper.dart';
+import 'package:storekit2utils/storekit2helper.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
