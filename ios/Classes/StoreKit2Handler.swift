@@ -14,6 +14,11 @@ class StoreKit2Handler {
                         if case .verified(let transaction) = result {
                             print("initialize \(transaction.id)")
                             // 检查交易是否有appAccountToken (UUID)
+                            if transaction.revocationDate != nil || transaction.expirationDate != nil {
+                                print("这是旧交易！revocationDate:\(transaction.revocationDate), expirationDate:\(transaction.expirationDate)")
+                                await transaction.finish()
+                                continue
+                            }
                             if let appAccountToken = transaction.appAccountToken {
                                 // 有UUID的交易，需要通过回调传回给客户端进行服务器验证
                                 NotificationCenter.default.post(
@@ -115,7 +120,13 @@ class StoreKit2Handler {
                     switch verification {
                     case .verified(let transaction):
                         // 不要立即调用finish，而是将交易返回给客户端
-                        print("StoreKit2Handler buyProduct success")
+                        print("StoreKit2Handler buyProduct success transaction.id: \(transaction.id) originalID: \(transaction.originalID)")
+                        if transaction.revocationDate != nil || transaction.expirationDate != nil {
+                            print("buyProduct！revocationDate:\(transaction.revocationDate), expirationDate:\(transaction.expirationDate) ")
+                        }
+                        if let appAccountToken = transaction.appAccountToken {
+                            print("buyProduct！appAccountToken:\(appAccountToken.uuidString) ")
+                        }
                         completion(true, nil, transaction)
                     case .unverified:
                         completion(false, NSError(domain: "StoreKitError", code: -2, userInfo: [NSLocalizedDescriptionKey: "Transaction unverified"]), nil)
