@@ -1,6 +1,6 @@
 name: storekit2utils
 description: "IOS Storekit2 Helper"
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/json1994/storekit2Utils
 
 # dart pub publish -f
